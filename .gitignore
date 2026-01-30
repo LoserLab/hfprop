@@ -11,3 +11,27 @@ htmlcov/
 *.so
 .venv/
 venv/
+
+# Secrets and credentials
+.env
+.env.*
+*.pem
+*.key
+secrets.*
+credentials.*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE / editor
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Internal documents
+internal/
+private/
+drafts/
