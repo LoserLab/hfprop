@@ -1,0 +1,4 @@
+[
+  {"time_tag": "2026-01-28T20:00:00", "frequency": 2800, "flux": 131.0, "reporting_schedule": "Noon", "ninety_day_mean": 150.0},
+  {"time_tag": "2026-01-29T20:00:00", "frequency": 2800, "flux": 129.0, "reporting_schedule": "Noon", "ninety_day_mean": 150.0}
+]
