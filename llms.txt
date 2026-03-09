@@ -1,0 +1,58 @@
+# hfprop
+
+> HF propagation conditions for field operators. Check band conditions, solar indices, and get FreeDV mode recommendations from the terminal. Zero runtime dependencies. Works offline. Companion tool for ReticulumHF.
+
+## Install
+
+```bash
+pip install .
+```
+
+Zero runtime dependencies. Python standard library only. Works on Raspberry Pi.
+
+## Commands
+
+```bash
+hfprop now              # Current conditions at a glance
+hfprop bands            # Band-by-band breakdown with FreeDV mode suggestions
+hfprop solar            # Full solar/geomagnetic indices
+hfprop path EM73 JN48   # Point-to-point path analysis between grid locators
+hfprop watch            # Continuous monitoring (hourly refresh)
+hfprop history          # Condition history from local SQLite database
+hfprop serve            # Expose data over Reticulum mesh (requires reticulum extra)
+hfprop query <hash>     # Query remote hfprop node over Reticulum
+```
+
+## Global flags
+
+```bash
+hfprop --grid EM73 now    # Location-aware (day/night/grayline detection)
+hfprop --offline now      # Use cached data only (no network)
+hfprop --json now         # JSON output for scripting
+hfprop --no-color now     # Disable ANSI colors
+```
+
+## Features
+
+- Solar indices: SFI, SSN, K-index, A-index, X-ray flux
+- Band conditions: 80m through 10m, day/night columns
+- Grid locator support: solar elevation, day/night/grayline detection
+- Path analysis: great-circle distance, bearing, band recommendations for both endpoints
+- FreeDV mode suggestions: DATAC1 (290bps), DATAC3 (124bps), DATAC4 (87bps) based on conditions
+- Watch mode: continuous monitoring with change detection
+- History: automatic SQLite logging, review past conditions
+- Reticulum network service: share propagation data over mesh networks
+- Offline mode: fetch once with internet, use cached data in the field
+
+## Data sources
+
+- HamQSL/N0NBH: solar indices + band conditions (hourly)
+- NOAA SWPC: K-index, solar flux (minutes)
+
+## Related
+
+- [ReticulumHF](https://github.com/LFManifesto/ReticulumHF): HF data transport over Reticulum
+
+## Author
+
+Created by Heathen.
